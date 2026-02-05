@@ -1,68 +1,189 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { format } from 'date-fns';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
-export const usePrayerTimes = (city) => {
-    const [prayerTimes, setPrayerTimes] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+// Debounce helper
+function useDebounce(value, delay) {
+    const [debouncedValue, setDebouncedValue] = useState(value);
 
     useEffect(() => {
-        if (!city) {
+        const handler = setTimeout(() => {
+            setDebouncedValue(value);
+        }, delay);
+
+        return () => clearTimeout(handler);
+    }, [value, delay]);
+
+    return debouncedValue;
+}
+
+// Get today's date string in DD-MM-YYYY format (AlAdhan format)
+function getTodayKey() {
+    const now = new Date();
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const year = now.getFullYear();
+    return `${day}-${month}-${year}`;
+}
+
+// Filter monthly data to get today's timings
+function filterTodayTimings(monthData) {
+    if (!Array.isArray(monthData)) return null;
+
+    const todayKey = getTodayKey();
+    const today = new Date();
+    const dayOfMonth = today.getDate();
+
+    // Try to find by array index (day - 1)
+    const byIndex = monthData[dayOfMonth - 1];
+    if (byIndex) {
+        return {
+            ...byIndex.timings,
+            date: byIndex.date?.readable || todayKey,
+            hijri: byIndex.date?.hijri,
+        };
+    }
+
+    // Fallback: search by date
+    for (const day of monthData) {
+        if (day.date?.gregorian?.date === todayKey) {
+            return {
+                ...day.timings,
+                date: day.date?.readable || todayKey,
+                hijri: day.date?.hijri,
+            };
+        }
+    }
+
+    return null;
+}
+
+// Clean time string (remove timezone info like "(CET)")
+function cleanTimings(timings) {
+    if (!timings) return null;
+
+    const cleaned = {};
+    for (const [key, value] of Object.entries(timings)) {
+        if (typeof value === 'string') {
+            // Remove timezone info like " (CET)" or " (CEST)"
+            cleaned[key] = value.replace(/\s*\([^)]*\)\s*$/, '');
+        } else {
+            cleaned[key] = value;
+        }
+    }
+    return cleaned;
+}
+
+export default function usePrayerTimes(city, country = '') {
+    const [prayerTimes, setPrayerTimes] = useState(null);
+    const [monthlyData, setMonthlyData] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const abortControllerRef = useRef(null);
+
+    // Debounce city/country changes (400ms)
+    const debouncedCity = useDebounce(city, 400);
+    const debouncedCountry = useDebounce(country, 400);
+
+    const fetchPrayerTimes = useCallback(async () => {
+        if (!debouncedCity) {
             setPrayerTimes(null);
+            setMonthlyData(null);
+            setError(null);
             return;
         }
 
-        const fetchPrayerTimes = async () => {
-            setLoading(true);
-            setError(null);
+        // Cancel previous request
+        if (abortControllerRef.current) {
+            abortControllerRef.current.abort();
+        }
+        abortControllerRef.current = new AbortController();
 
-            try {
-                // Format date as DD-MM-YYYY
-                const today = format(new Date(), 'dd-MM-yyyy');
+        setLoading(true);
+        setError(null);
 
-                const response = await axios.get(
-                    `https://api.aladhan.com/v1/timingsByCity/${today}`,
-                    {
-                        params: {
-                            city: city,
-                            country: '',
-                            method: 3, // Muslim World League
-                        },
-                    }
-                );
+        try {
+            const params = new URLSearchParams({
+                city: debouncedCity,
+                ...(debouncedCountry && { country: debouncedCountry }),
+                method: '2', // Islamic Society of North America
+            });
 
-                if (response.data.code === 200) {
-                    const timings = response.data.data.timings;
-                    setPrayerTimes({
-                        Fajr: timings.Fajr,
-                        Sunrise: timings.Sunrise,
-                        Dhuhr: timings.Dhuhr,
-                        Asr: timings.Asr,
-                        Maghrib: timings.Maghrib,
-                        Isha: timings.Isha,
-                        date: response.data.data.date.readable,
-                        hijri: response.data.data.date.hijri,
-                    });
-                } else {
-                    throw new Error('API returned an error');
-                }
-            } catch (err) {
-                setError(
-                    err.response?.status === 400
-                        ? 'City not found. Please check the spelling and try again.'
-                        : 'Failed to fetch prayer times. Please try again later.'
-                );
-                setPrayerTimes(null);
-            } finally {
-                setLoading(false);
+            const response = await fetch(`/api/prayer-times?${params}`, {
+                signal: abortControllerRef.current.signal,
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.error || `HTTP ${response.status}`);
+            }
+
+            const result = await response.json();
+
+            if (!result.data) {
+                throw new Error('No prayer data received');
+            }
+
+            // Store full monthly data
+            setMonthlyData(result.data);
+
+            // Filter to get today's timings
+            const todayTimings = filterTodayTimings(result.data);
+
+            if (!todayTimings) {
+                throw new Error('Could not find prayer times for today');
+            }
+
+            // Clean timezone info from times
+            const cleanedTimings = cleanTimings(todayTimings);
+            setPrayerTimes(cleanedTimings);
+
+        } catch (err) {
+            if (err.name === 'AbortError') {
+                return; // Ignore abort errors
+            }
+            console.error('Prayer times fetch error:', err);
+            setError(err.message || 'Failed to fetch prayer times');
+            setPrayerTimes(null);
+        } finally {
+            setLoading(false);
+        }
+    }, [debouncedCity, debouncedCountry]);
+
+    // Fetch on city/country change
+    useEffect(() => {
+        fetchPrayerTimes();
+
+        return () => {
+            if (abortControllerRef.current) {
+                abortControllerRef.current.abort();
             }
         };
+    }, [fetchPrayerTimes]);
 
-        fetchPrayerTimes();
-    }, [city]);
+    // Update today's timings at midnight
+    useEffect(() => {
+        if (!monthlyData) return;
 
-    return { prayerTimes, loading, error };
-};
+        const updateAtMidnight = () => {
+            const now = new Date();
+            const tomorrow = new Date(now);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(0, 0, 5, 0); // 12:00:05 AM
 
-export default usePrayerTimes;
+            const msUntilMidnight = tomorrow - now;
+
+            return setTimeout(() => {
+                const todayTimings = filterTodayTimings(monthlyData);
+                if (todayTimings) {
+                    setPrayerTimes(cleanTimings(todayTimings));
+                }
+                // Schedule next update
+                updateAtMidnight();
+            }, msUntilMidnight);
+        };
+
+        const timeout = updateAtMidnight();
+        return () => clearTimeout(timeout);
+    }, [monthlyData]);
+
+    return { prayerTimes, monthlyData, loading, error, refetch: fetchPrayerTimes };
+}

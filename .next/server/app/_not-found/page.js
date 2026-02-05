@@ -1,0 +1,13 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/_not-found/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__fa8c7d44._.js")
+R.c("server/chunks/ssr/62b52_next_dist_81ab476e._.js")
+R.c("server/chunks/ssr/62b52_next_dist_esm_build_templates_app-page_66bce3c1.js")
+R.c("server/chunks/ssr/[root-of-the-server]__4428e611._.js")
+R.c("server/chunks/ssr/62b52_next_dist_1501ecdd._.js")
+R.c("server/chunks/ssr/62b52_next_dist_d1ee8793._.js")
+R.c("server/chunks/ssr/OneDrive - Akumenia_Bureau_ramlive_app_layout_571a1b07.js")
+R.c("server/chunks/ssr/62b52_next_dist_client_components_ea16c492._.js")
+R.c("server/chunks/ssr/62b52_next_dist_client_components_builtin_forbidden_53bb517f.js")
+R.c("server/chunks/ssr/3dec5_Bureau_ramlive__next-internal_server_app__not-found_page_actions_918b7bdc.js")
+R.m(90279)
+module.exports=R.m(90279).exports

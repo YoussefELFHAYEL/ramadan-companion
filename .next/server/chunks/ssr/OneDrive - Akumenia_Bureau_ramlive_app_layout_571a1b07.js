@@ -1,0 +1,3 @@
+module.exports=[51540,a=>{"use strict";var b=a.i(81520);function c({children:a}){return(0,b.jsx)("html",{lang:"en",children:(0,b.jsx)("body",{children:a})})}a.s(["default",()=>c,"metadata",0,{title:"Ramadan Companion - Prayer Times & Fasting Countdown",description:"Beautiful Ramadan companion app with prayer times, fasting countdown, Asma Al Husna, and daily Adkar.",keywords:["ramadan","prayer times","fasting","iftar","suhoor","islam"],openGraph:{title:"Ramadan Companion",description:"Your beautiful companion for Ramadan - Prayer times, fasting countdown, and more.",type:"website"}}])}];
+
+//# sourceMappingURL=OneDrive%20-%20Akumenia_Bureau_ramlive_app_layout_571a1b07.js.map

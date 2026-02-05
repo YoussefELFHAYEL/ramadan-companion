@@ -77,7 +77,7 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
         setQuery(city.name);
         setIsOpen(false);
         setSelectedIndex(-1);
-        onSubmit(city.name);
+        onSubmit(city.name, city.country);
     };
 
     const handleInputChange = (e) => {
@@ -230,18 +230,21 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
                     transition={{ delay: 0.5, duration: 0.5 }}
                     className="mt-10 flex flex-wrap justify-center gap-2"
                 >
-                    {popularCities.map((city) => (
-                        <button
-                            key={city}
-                            onClick={() => {
-                                setQuery(city);
-                                onSubmit(city);
-                            }}
-                            className="px-4 py-2 rounded-full text-sm text-gray-400 bg-white/5 hover:bg-emerald-500/20 hover:text-emerald-300 transition-all duration-300 border border-white/5 hover:border-emerald-500/30"
-                        >
-                            {city}
-                        </button>
-                    ))}
+                    {popularCities.map((cityName) => {
+                        const cityData = cities.find(c => c.name === cityName);
+                        return (
+                            <button
+                                key={cityName}
+                                onClick={() => {
+                                    setQuery(cityName);
+                                    onSubmit(cityName, cityData?.country || '');
+                                }}
+                                className="px-4 py-2 rounded-full text-sm text-gray-400 bg-white/5 hover:bg-emerald-500/20 hover:text-emerald-300 transition-all duration-300 border border-white/5 hover:border-emerald-500/30"
+                            >
+                                {cityName}
+                            </button>
+                        );
+                    })}
                 </motion.div>
             </motion.div>
         </div>
