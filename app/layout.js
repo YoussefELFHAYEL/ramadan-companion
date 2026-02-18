@@ -2,6 +2,7 @@ import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
+    metadataBase: new URL('https://ramadan.live'),
     // Basic SEO
     title: 'Ramadan.live - Prayer Times, Fasting Countdown & Daily Ayah',
     description: 'Your beautiful companion for Ramadan 2024. Get accurate prayer times, Iftar & Suhoor countdown, daily Quran verses, Asma Al Husna, and Ramadan Adkar - all in one place.',

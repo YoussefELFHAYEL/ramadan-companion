@@ -5,35 +5,32 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, MapPin, Sparkles, Globe, Loader2 } from 'lucide-react';
 
 // ========================================
-// SMART SEARCH WITH LOCAL FILTERING
+// COMPACT HERO SEARCH (Collapsible)
 // ========================================
-const SmartSearch = ({ onSubmit, savedCity }) => {
+const SmartSearch = ({ onSubmit, savedCity, hasCity }) => {
     const [query, setQuery] = useState(savedCity || '');
     const [suggestions, setSuggestions] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(-1);
     const [isLoading, setIsLoading] = useState(false);
-    const [noResults, setNoResults] = useState(false);
 
     // Cache: { prefix: [results] } - stores full list for each 3-char prefix
     const prefixCache = useRef({});
     const currentPrefix = useRef('');
-    const fullResults = useRef([]); // Full results for current prefix
+    const fullResults = useRef([]);
 
     const inputRef = useRef(null);
     const dropdownRef = useRef(null);
     const abortRef = useRef(null);
     const debounceRef = useRef(null);
 
-    // Get 3-char prefix
     const getPrefix = (q) => q?.toLowerCase().trim().substring(0, 3) || '';
 
     // ========================================
-    // LOCAL FILTERING (no API call!)
+    // LOCAL FILTERING
     // ========================================
     const filterLocally = useCallback((searchQuery) => {
         if (!fullResults.current.length) return [];
-
         const lowerQuery = searchQuery.toLowerCase().trim();
         return fullResults.current.filter(item =>
             item.city.toLowerCase().includes(lowerQuery) ||
@@ -48,45 +45,36 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
     const fetchSuggestions = useCallback(async (searchQuery) => {
         const prefix = getPrefix(searchQuery);
 
-        // Check if we already have this prefix cached
         if (prefixCache.current[prefix]) {
             fullResults.current = prefixCache.current[prefix];
             currentPrefix.current = prefix;
             const filtered = filterLocally(searchQuery);
             setSuggestions(filtered);
-            setNoResults(filtered.length === 0);
-            setIsOpen(true);
+            setIsOpen(filtered.length > 0);
             return;
         }
 
         if (abortRef.current) abortRef.current.abort();
         abortRef.current = new AbortController();
-
         setIsLoading(true);
-        setNoResults(false);
 
         try {
             const res = await fetch(`/api/suggestions?q=${encodeURIComponent(searchQuery)}`, {
                 signal: abortRef.current.signal,
             });
-
             const data = await res.json();
             const results = data.results || [];
 
-            // Cache the full results for this prefix
             prefixCache.current[prefix] = results;
             fullResults.current = results;
             currentPrefix.current = prefix;
 
-            // Filter based on full query
             const filtered = filterLocally(searchQuery);
             setSuggestions(filtered);
-            setNoResults(filtered.length === 0);
-            setIsOpen(true);
+            setIsOpen(filtered.length > 0);
         } catch (err) {
             if (err.name !== 'AbortError') {
                 setSuggestions([]);
-                setNoResults(true);
             }
         } finally {
             setIsLoading(false);
@@ -102,33 +90,27 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
         if (query.length < 3) {
             setSuggestions([]);
             setIsOpen(false);
-            setNoResults(false);
             return;
         }
 
         const prefix = getPrefix(query);
 
-        // If same prefix as current, filter locally (INSTANT!)
         if (prefix === currentPrefix.current && fullResults.current.length > 0) {
             const filtered = filterLocally(query);
             setSuggestions(filtered);
-            setNoResults(filtered.length === 0);
-            setIsOpen(true);
+            setIsOpen(filtered.length > 0);
             return;
         }
 
-        // If we have this prefix cached, use it (INSTANT!)
         if (prefixCache.current[prefix]) {
             fullResults.current = prefixCache.current[prefix];
             currentPrefix.current = prefix;
             const filtered = filterLocally(query);
             setSuggestions(filtered);
-            setNoResults(filtered.length === 0);
-            setIsOpen(true);
+            setIsOpen(filtered.length > 0);
             return;
         }
 
-        // New prefix - debounce and fetch from API
         debounceRef.current = setTimeout(() => {
             fetchSuggestions(query);
         }, 400);
@@ -159,18 +141,13 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
     // ========================================
     const handleKeyDown = (e) => {
         if (!isOpen || suggestions.length === 0) {
-            if (e.key === 'Enter' && query.trim()) {
-                handleManualSubmit();
-            }
+            if (e.key === 'Enter' && query.trim()) handleManualSubmit();
             return;
         }
-
         switch (e.key) {
             case 'ArrowDown':
                 e.preventDefault();
-                setSelectedIndex(prev =>
-                    prev < suggestions.length - 1 ? prev + 1 : prev
-                );
+                setSelectedIndex(prev => prev < suggestions.length - 1 ? prev + 1 : prev);
                 break;
             case 'ArrowUp':
                 e.preventDefault();
@@ -178,11 +155,8 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
                 break;
             case 'Enter':
                 e.preventDefault();
-                if (selectedIndex >= 0) {
-                    handleSelectCity(suggestions[selectedIndex]);
-                } else if (query.trim()) {
-                    handleManualSubmit();
-                }
+                if (selectedIndex >= 0) handleSelectCity(suggestions[selectedIndex]);
+                else if (query.trim()) handleManualSubmit();
                 break;
             case 'Escape':
                 setIsOpen(false);
@@ -191,9 +165,6 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
         }
     };
 
-    // ========================================
-    // SELECTION HANDLERS
-    // ========================================
     const handleSelectCity = (suggestion) => {
         setQuery(suggestion.city);
         setIsOpen(false);
@@ -214,9 +185,6 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
         setSelectedIndex(-1);
     };
 
-    // ========================================
-    // HIGHLIGHT MATCHING TEXT
-    // ========================================
     const highlightMatch = (text, searchQuery) => {
         if (!searchQuery.trim() || !text) return text;
         const escaped = searchQuery.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -229,7 +197,6 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
         );
     };
 
-    // Popular cities
     const popularCities = [
         { city: 'Mecca', country: 'Saudi Arabia' },
         { city: 'Casablanca', country: 'Morocco' },
@@ -239,38 +206,29 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
         { city: 'London', country: 'United Kingdom' },
     ];
 
-    return (
-        <div className="min-h-screen flex flex-col items-center justify-center px-4 relative z-10">
-            {/* Decorative Elements */}
-            <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 0.15, scale: 1 }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className="absolute top-24 left-16"
-            >
-                <Sparkles className="w-10 h-10 text-emerald-400" />
-            </motion.div>
-            <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 0.1, scale: 1 }}
-                transition={{ duration: 1, delay: 0.7 }}
-                className="absolute bottom-32 right-20"
-            >
-                <Globe className="w-16 h-16 text-amber-400" />
-            </motion.div>
+    // ========================================
+    // COLLAPSED VIEW (city already selected)
+    // ========================================
+    if (hasCity) {
+        return null; // Header handles display when city is selected
+    }
 
-            {/* Main Content */}
+    // ========================================
+    // EXPANDED HERO (no city yet / first visit)
+    // ========================================
+    return (
+        <div className="pt-16 pb-10 px-4 relative z-10">
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-center max-w-xl w-full"
+                className="text-center max-w-xl mx-auto"
             >
                 {/* Logo */}
                 <motion.div
                     initial={{ scale: 0.5, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.6, type: "spring" }}
+                    transition={{ duration: 0.6, type: 'spring' }}
                     className="mb-4"
                 >
                     <span className="text-7xl">🌙</span>
@@ -280,11 +238,11 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
                     Ramadan Companion
                 </h1>
 
-                <p className="text-gray-400 text-lg md:text-xl mb-12">
+                <p className="text-gray-400 text-lg md:text-xl mb-10">
                     Your spiritual guide for the blessed month
                 </p>
 
-                {/* Smart Search */}
+                {/* Search Bar */}
                 <div className="relative">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -295,7 +253,6 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
                         <div className="pl-4">
                             <MapPin className="w-5 h-5 text-emerald-400" />
                         </div>
-
                         <input
                             ref={inputRef}
                             type="text"
@@ -307,11 +264,7 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
                             className="flex-1 bg-transparent border-none outline-none text-lg text-white placeholder-gray-500 py-3"
                             autoComplete="off"
                         />
-
-                        {isLoading && (
-                            <Loader2 className="w-5 h-5 text-emerald-400 animate-spin" />
-                        )}
-
+                        {isLoading && <Loader2 className="w-5 h-5 text-emerald-400 animate-spin" />}
                         <button
                             type="button"
                             onClick={handleManualSubmit}
@@ -324,7 +277,7 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
 
                     {/* Dropdown */}
                     <AnimatePresence>
-                        {isOpen && (suggestions.length > 0 || noResults) && (
+                        {isOpen && suggestions.length > 0 && (
                             <motion.div
                                 ref={dropdownRef}
                                 initial={{ opacity: 0, y: -10, scale: 0.98 }}
@@ -339,36 +292,30 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
                                     boxShadow: '0 24px 48px rgba(0, 0, 0, 0.4)',
                                 }}
                             >
-                                {noResults ? (
-                                    <div className="px-5 py-4 text-gray-500 text-center">
-                                        No cities found for "{query}"
-                                    </div>
-                                ) : (
-                                    suggestions.map((suggestion, index) => (
-                                        <div
-                                            key={`${suggestion.city}-${suggestion.country}-${index}`}
-                                            onClick={() => handleSelectCity(suggestion)}
-                                            className={`flex items-center gap-3 px-5 py-3.5 cursor-pointer transition-all duration-150 border-b border-white/5 last:border-b-0 ${index === selectedIndex
+                                {suggestions.map((suggestion, index) => (
+                                    <div
+                                        key={`${suggestion.city}-${suggestion.country}-${index}`}
+                                        onClick={() => handleSelectCity(suggestion)}
+                                        className={`flex items-center gap-3 px-5 py-3.5 cursor-pointer transition-all duration-150 border-b border-white/5 last:border-b-0 ${index === selectedIndex
                                                 ? 'bg-emerald-500/20 text-white'
                                                 : 'hover:bg-white/5 text-gray-300'
-                                                }`}
-                                        >
-                                            <MapPin className={`w-4 h-4 flex-shrink-0 ${index === selectedIndex ? 'text-emerald-400' : 'text-gray-500'
-                                                }`} />
-                                            <div className="flex-1 min-w-0">
-                                                <p className="font-medium truncate">
-                                                    {highlightMatch(suggestion.city, query)}
-                                                </p>
-                                                <p className="text-sm text-gray-500 truncate">
-                                                    {suggestion.country}
-                                                </p>
-                                            </div>
-                                            {index === selectedIndex && (
-                                                <span className="text-xs text-gray-500 flex-shrink-0">Enter ↵</span>
-                                            )}
+                                            }`}
+                                    >
+                                        <MapPin className={`w-4 h-4 flex-shrink-0 ${index === selectedIndex ? 'text-emerald-400' : 'text-gray-500'
+                                            }`} />
+                                        <div className="flex-1 min-w-0">
+                                            <p className="font-medium truncate">
+                                                {highlightMatch(suggestion.city, query)}
+                                            </p>
+                                            <p className="text-sm text-gray-500 truncate">
+                                                {suggestion.country}
+                                            </p>
                                         </div>
-                                    ))
-                                )}
+                                        {index === selectedIndex && (
+                                            <span className="text-xs text-gray-500 flex-shrink-0">Enter ↵</span>
+                                        )}
+                                    </div>
+                                ))}
                             </motion.div>
                         )}
                     </AnimatePresence>
@@ -383,7 +330,7 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5, duration: 0.6 }}
-                    className="mt-12"
+                    className="mt-10"
                 >
                     <p className="text-gray-500 text-sm mb-4">Popular cities</p>
                     <div className="flex flex-wrap justify-center gap-3">
@@ -405,7 +352,6 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
                                     backdropFilter: 'blur(8px)',
                                 }}
                             >
-                                {/* Hover glow effect */}
                                 <div
                                     className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                     style={{
@@ -419,6 +365,16 @@ const SmartSearch = ({ onSubmit, savedCity }) => {
                             </motion.button>
                         ))}
                     </div>
+                </motion.div>
+
+                {/* Scroll hint */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.5 }}
+                    transition={{ delay: 1.2, duration: 0.6 }}
+                    className="mt-10"
+                >
+                    <p className="text-gray-600 text-xs">↓ Scroll down for prayer times ↓</p>
                 </motion.div>
             </motion.div>
         </div>
