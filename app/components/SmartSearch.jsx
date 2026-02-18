@@ -174,13 +174,13 @@ const SmartSearch = ({ onSubmit }) => {
     ];
 
     return (
-        <section className="hero-section min-h-screen flex flex-col items-center justify-center px-4 relative z-10">
-            {/* Decorative Elements */}
+        <section className="hero-section min-h-screen flex flex-col items-center justify-center px-4 pb-20 relative z-10">
+            {/* Decorative Elements - hidden on mobile */}
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 0.15, scale: 1 }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className="absolute top-24 left-16"
+                className="absolute top-24 left-16 hidden md:block"
             >
                 <Sparkles className="w-10 h-10 text-emerald-400" />
             </motion.div>
@@ -188,7 +188,7 @@ const SmartSearch = ({ onSubmit }) => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 0.1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.7 }}
-                className="absolute bottom-32 right-20"
+                className="absolute bottom-32 right-20 hidden md:block"
             >
                 <Globe className="w-16 h-16 text-amber-400" />
             </motion.div>
@@ -204,15 +204,15 @@ const SmartSearch = ({ onSubmit }) => {
                     initial={{ scale: 0.5, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.6, type: 'spring' }}
-                    className="mb-4"
+                    className="mb-2 md:mb-4"
                 >
-                    <span className="text-7xl">🌙</span>
+                    <span className="text-5xl md:text-7xl">🌙</span>
                 </motion.div>
 
-                <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-400 bg-clip-text text-transparent">
+                <h1 className="text-4xl md:text-6xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-400 bg-clip-text text-transparent">
                     Ramadan Companion
                 </h1>
-                <p className="text-gray-400 text-lg md:text-xl mb-10">
+                <p className="text-gray-400 text-base md:text-xl mb-6 md:mb-10">
                     Your spiritual guide for the blessed month
                 </p>
 
@@ -271,8 +271,8 @@ const SmartSearch = ({ onSubmit }) => {
                                         key={`${suggestion.city}-${suggestion.country}-${index}`}
                                         onClick={() => handleSelectCity(suggestion)}
                                         className={`flex items-center gap-3 px-5 py-3.5 cursor-pointer transition-all duration-150 border-b border-white/5 last:border-b-0 ${index === selectedIndex
-                                                ? 'bg-emerald-500/20 text-white'
-                                                : 'hover:bg-white/5 text-gray-300'
+                                            ? 'bg-emerald-500/20 text-white'
+                                            : 'hover:bg-white/5 text-gray-300'
                                             }`}
                                     >
                                         <MapPin className={`w-4 h-4 flex-shrink-0 ${index === selectedIndex ? 'text-emerald-400' : 'text-gray-500'
@@ -293,7 +293,7 @@ const SmartSearch = ({ onSubmit }) => {
                     </AnimatePresence>
                 </div>
 
-                <p className="text-gray-500 text-sm mt-6">
+                <p className="text-gray-500 text-xs md:text-sm mt-3 md:mt-6">
                     Type at least 3 characters · Use ↑↓ to navigate · Enter to select
                 </p>
 
@@ -302,7 +302,7 @@ const SmartSearch = ({ onSubmit }) => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5, duration: 0.6 }}
-                    className="mt-10"
+                    className="mt-4 md:mt-10"
                 >
                     <p className="text-gray-500 text-sm mb-4">Popular cities</p>
                     <div className="flex flex-wrap justify-center gap-3">
@@ -337,13 +337,13 @@ const SmartSearch = ({ onSubmit }) => {
                 </motion.div>
             </motion.div>
 
-            {/* Animated Scroll Arrow */}
+            {/* Animated Scroll Arrow - always visible at bottom */}
             <motion.button
                 onClick={scrollToDashboard}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2 }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:text-emerald-400 transition-colors cursor-pointer"
+                className="mt-6 md:mt-10 flex flex-col items-center gap-1 md:gap-2 text-gray-500 hover:text-emerald-400 transition-colors cursor-pointer"
             >
                 <span className="text-xs font-medium tracking-wider uppercase">Scroll for prayer times</span>
                 <motion.div

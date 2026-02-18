@@ -198,7 +198,7 @@ export default function Home() {
             {/* SECTION 2: Dashboard (always rendered below) */}
             {/* ============================================ */}
             <div id="dashboard" className="dashboard-section min-h-screen">
-                <div className="app-container py-10 relative z-10">
+                <div className="app-container py-8 md:py-10 px-5 md:px-6 relative z-10">
 
                     {/* Dashboard Header with Inline Search */}
                     <motion.header
@@ -303,7 +303,7 @@ export default function Home() {
                         )}
 
                         {/* Fasting Progress Bar */}
-                        <div className="mb-6">
+                        <div className="mb-8 md:mb-6">
                             <FastingProgressBar prayerTimes={prayerTimes} />
                         </div>
 
@@ -313,12 +313,12 @@ export default function Home() {
                         </div>
 
                         {/* Prayer Times */}
-                        <div className="mt-8 mb-12 relative z-10">
+                        <div className="mt-10 md:mt-8 mb-14 md:mb-12 relative z-10">
                             <PrayerTimesGrid prayerTimes={prayerTimes} loading={prayerLoading} />
                         </div>
 
                         {/* Bottom Row: Asma & Adkar */}
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-10">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 relative z-10">
                             <AsmaAlHusna
                                 name={asmaName}
                                 loading={asmaLoading}
@@ -329,7 +329,7 @@ export default function Home() {
                         </div>
 
                         {/* Daily Ayah - Full Width */}
-                        <div className="mt-12 relative z-10">
+                        <div className="mt-10 md:mt-12 relative z-10">
                             <DailyAyah />
                         </div>
                     </main>
