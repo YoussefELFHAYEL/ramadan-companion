@@ -2,7 +2,7 @@
     script: typeof document === "object" ? document.currentScript : undefined,
     chunks: [
   "static/chunks/OneDrive - Akumenia_Bureau_ramlive_app_a28d67c1._.js",
-  "static/chunks/62b52_2bc8e058._.js"
+  "static/chunks/62b52_d05d622b._.js"
 ],
     source: "dynamic"
 });

@@ -23,7 +23,13 @@
   box-sizing: border-box;
 }
 
-html,
+html {
+  width: 100%;
+  min-height: 100vh;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
 body,
 #root {
   width: 100%;
@@ -35,6 +41,17 @@ body {
   min-height: 100vh;
   color: var(--soft-white);
   overflow-x: hidden;
+}
+
+/* Scroll Snap Sections */
+.hero-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.dashboard-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 /* Dynamic Gradient Mesh Background */

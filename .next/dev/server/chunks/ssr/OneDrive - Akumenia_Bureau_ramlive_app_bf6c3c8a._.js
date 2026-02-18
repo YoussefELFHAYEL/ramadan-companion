@@ -12,22 +12,21 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$
 var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/OneDrive - Akumenia/Bureau/ramlive/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__ = __turbopack_context__.i("[project]/OneDrive - Akumenia/Bureau/ramlive/node_modules/lucide-react/dist/esm/icons/search.js [app-ssr] (ecmascript) <export default as Search>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__ = __turbopack_context__.i("[project]/OneDrive - Akumenia/Bureau/ramlive/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-ssr] (ecmascript) <export default as MapPin>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__ = __turbopack_context__.i("[project]/OneDrive - Akumenia/Bureau/ramlive/node_modules/lucide-react/dist/esm/icons/sparkles.js [app-ssr] (ecmascript) <export default as Sparkles>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$globe$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Globe$3e$__ = __turbopack_context__.i("[project]/OneDrive - Akumenia/Bureau/ramlive/node_modules/lucide-react/dist/esm/icons/globe.js [app-ssr] (ecmascript) <export default as Globe>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__ = __turbopack_context__.i("[project]/OneDrive - Akumenia/Bureau/ramlive/node_modules/lucide-react/dist/esm/icons/loader-circle.js [app-ssr] (ecmascript) <export default as Loader2>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__ = __turbopack_context__.i("[project]/OneDrive - Akumenia/Bureau/ramlive/node_modules/lucide-react/dist/esm/icons/chevron-down.js [app-ssr] (ecmascript) <export default as ChevronDown>");
 'use client';
 ;
 ;
 ;
 ;
-// ========================================
-// COMPACT HERO SEARCH (Collapsible)
-// ========================================
-const SmartSearch = ({ onSubmit, savedCity, hasCity })=>{
-    const [query, setQuery] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(savedCity || '');
+const SmartSearch = ({ onSubmit })=>{
+    const [query, setQuery] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const [suggestions, setSuggestions] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [isOpen, setIsOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [selectedIndex, setSelectedIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(-1);
     const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    // Cache: { prefix: [results] } - stores full list for each 3-char prefix
     const prefixCache = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])({});
     const currentPrefix = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])('');
     const fullResults = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])([]);
@@ -36,17 +35,11 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity })=>{
     const abortRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const debounceRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const getPrefix = (q)=>q?.toLowerCase().trim().substring(0, 3) || '';
-    // ========================================
-    // LOCAL FILTERING
-    // ========================================
     const filterLocally = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((searchQuery)=>{
         if (!fullResults.current.length) return [];
         const lowerQuery = searchQuery.toLowerCase().trim();
         return fullResults.current.filter((item)=>item.city.toLowerCase().includes(lowerQuery) || item.country.toLowerCase().includes(lowerQuery) || item.formatted.toLowerCase().includes(lowerQuery));
     }, []);
-    // ========================================
-    // FETCH FROM BACKEND (only for new prefix)
-    // ========================================
     const fetchSuggestions = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(async (searchQuery)=>{
         const prefix = getPrefix(searchQuery);
         if (prefixCache.current[prefix]) {
@@ -73,18 +66,13 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity })=>{
             setSuggestions(filtered);
             setIsOpen(filtered.length > 0);
         } catch (err) {
-            if (err.name !== 'AbortError') {
-                setSuggestions([]);
-            }
+            if (err.name !== 'AbortError') setSuggestions([]);
         } finally{
             setIsLoading(false);
         }
     }, [
         filterLocally
     ]);
-    // ========================================
-    // SMART INPUT HANDLER
-    // ========================================
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (debounceRef.current) clearTimeout(debounceRef.current);
         if (query.length < 3) {
@@ -107,9 +95,7 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity })=>{
             setIsOpen(filtered.length > 0);
             return;
         }
-        debounceRef.current = setTimeout(()=>{
-            fetchSuggestions(query);
-        }, 400);
+        debounceRef.current = setTimeout(()=>fetchSuggestions(query), 400);
         return ()=>{
             if (debounceRef.current) clearTimeout(debounceRef.current);
         };
@@ -118,21 +104,13 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity })=>{
         fetchSuggestions,
         filterLocally
     ]);
-    // ========================================
-    // CLICK OUTSIDE TO CLOSE
-    // ========================================
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const handleClickOutside = (e)=>{
-            if (dropdownRef.current && !dropdownRef.current.contains(e.target) && inputRef.current && !inputRef.current.contains(e.target)) {
-                setIsOpen(false);
-            }
+            if (dropdownRef.current && !dropdownRef.current.contains(e.target) && inputRef.current && !inputRef.current.contains(e.target)) setIsOpen(false);
         };
         document.addEventListener('mousedown', handleClickOutside);
         return ()=>document.removeEventListener('mousedown', handleClickOutside);
     }, []);
-    // ========================================
-    // KEYBOARD NAVIGATION
-    // ========================================
     const handleKeyDown = (e)=>{
         if (!isOpen || suggestions.length === 0) {
             if (e.key === 'Enter' && query.trim()) handleManualSubmit();
@@ -159,7 +137,7 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity })=>{
         }
     };
     const handleSelectCity = (suggestion)=>{
-        setQuery(suggestion.city);
+        setQuery(''); // Clear search bar - don't show selected city
         setIsOpen(false);
         setSelectedIndex(-1);
         setSuggestions([]);
@@ -167,8 +145,10 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity })=>{
     };
     const handleManualSubmit = ()=>{
         if (query.trim()) {
+            const trimmed = query.trim();
+            setQuery(''); // Clear search bar
             setIsOpen(false);
-            onSubmit(query.trim(), '');
+            onSubmit(trimmed, '');
         }
     };
     const handleInputChange = (e)=>{
@@ -185,9 +165,14 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity })=>{
                 children: part
             }, i, false, {
                 fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                lineNumber: 195,
+                lineNumber: 158,
                 columnNumber: 17
             }, ("TURBOPACK compile-time value", void 0)) : part);
+    };
+    const scrollToDashboard = ()=>{
+        document.getElementById('dashboard')?.scrollIntoView({
+            behavior: 'smooth'
+        });
     };
     const popularCities = [
         {
@@ -215,394 +200,463 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity })=>{
             country: 'United Kingdom'
         }
     ];
-    // ========================================
-    // COLLAPSED VIEW (city already selected)
-    // ========================================
-    if (hasCity) {
-        return null; // Header handles display when city is selected
-    }
-    // ========================================
-    // EXPANDED HERO (no city yet / first visit)
-    // ========================================
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "pt-16 pb-10 px-4 relative z-10",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-            initial: {
-                opacity: 0,
-                y: 30
-            },
-            animate: {
-                opacity: 1,
-                y: 0
-            },
-            transition: {
-                duration: 0.8
-            },
-            className: "text-center max-w-xl mx-auto",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                    initial: {
-                        scale: 0.5,
-                        opacity: 0
-                    },
-                    animate: {
-                        scale: 1,
-                        opacity: 1
-                    },
-                    transition: {
-                        duration: 0.6,
-                        type: 'spring'
-                    },
-                    className: "mb-4",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "text-7xl",
-                        children: "🌙"
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "hero-section min-h-screen flex flex-col items-center justify-center px-4 relative z-10",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                initial: {
+                    opacity: 0,
+                    scale: 0.8
+                },
+                animate: {
+                    opacity: 0.15,
+                    scale: 1
+                },
+                transition: {
+                    duration: 1,
+                    delay: 0.5
+                },
+                className: "absolute top-24 left-16",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__["Sparkles"], {
+                    className: "w-10 h-10 text-emerald-400"
+                }, void 0, false, {
+                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                    lineNumber: 185,
+                    columnNumber: 17
+                }, ("TURBOPACK compile-time value", void 0))
+            }, void 0, false, {
+                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                lineNumber: 179,
+                columnNumber: 13
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                initial: {
+                    opacity: 0,
+                    scale: 0.8
+                },
+                animate: {
+                    opacity: 0.1,
+                    scale: 1
+                },
+                transition: {
+                    duration: 1,
+                    delay: 0.7
+                },
+                className: "absolute bottom-32 right-20",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$globe$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Globe$3e$__["Globe"], {
+                    className: "w-16 h-16 text-amber-400"
+                }, void 0, false, {
+                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                    lineNumber: 193,
+                    columnNumber: 17
+                }, ("TURBOPACK compile-time value", void 0))
+            }, void 0, false, {
+                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                lineNumber: 187,
+                columnNumber: 13
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                initial: {
+                    opacity: 0,
+                    y: 30
+                },
+                animate: {
+                    opacity: 1,
+                    y: 0
+                },
+                transition: {
+                    duration: 0.8
+                },
+                className: "text-center max-w-xl w-full",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                        initial: {
+                            scale: 0.5,
+                            opacity: 0
+                        },
+                        animate: {
+                            scale: 1,
+                            opacity: 1
+                        },
+                        transition: {
+                            duration: 0.6,
+                            type: 'spring'
+                        },
+                        className: "mb-4",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "text-7xl",
+                            children: "🌙"
+                        }, void 0, false, {
+                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                            lineNumber: 209,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                        lineNumber: 234,
-                        columnNumber: 21
-                    }, ("TURBOPACK compile-time value", void 0))
-                }, void 0, false, {
-                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                    lineNumber: 228,
-                    columnNumber: 17
-                }, ("TURBOPACK compile-time value", void 0)),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                    className: "text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-400 bg-clip-text text-transparent",
-                    children: "Ramadan Companion"
-                }, void 0, false, {
-                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                    lineNumber: 237,
-                    columnNumber: 17
-                }, ("TURBOPACK compile-time value", void 0)),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "text-gray-400 text-lg md:text-xl mb-10",
-                    children: "Your spiritual guide for the blessed month"
-                }, void 0, false, {
-                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                    lineNumber: 241,
-                    columnNumber: 17
-                }, ("TURBOPACK compile-time value", void 0)),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "relative",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                            initial: {
-                                opacity: 0,
-                                y: 20
-                            },
-                            animate: {
-                                opacity: 1,
-                                y: 0
-                            },
-                            transition: {
-                                delay: 0.3,
-                                duration: 0.5
-                            },
-                            className: "glass-card-elevated p-2 flex items-center gap-2",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "pl-4",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
-                                        className: "w-5 h-5 text-emerald-400"
-                                    }, void 0, false, {
-                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                        lineNumber: 254,
-                                        columnNumber: 29
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                }, void 0, false, {
-                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                    lineNumber: 253,
-                                    columnNumber: 25
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    ref: inputRef,
-                                    type: "text",
-                                    value: query,
-                                    onChange: handleInputChange,
-                                    onFocus: ()=>suggestions.length > 0 && setIsOpen(true),
-                                    onKeyDown: handleKeyDown,
-                                    placeholder: "Search for your city...",
-                                    className: "flex-1 bg-transparent border-none outline-none text-lg text-white placeholder-gray-500 py-3",
-                                    autoComplete: "off"
-                                }, void 0, false, {
-                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                    lineNumber: 256,
-                                    columnNumber: 25
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                isLoading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
-                                    className: "w-5 h-5 text-emerald-400 animate-spin"
-                                }, void 0, false, {
-                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                    lineNumber: 267,
-                                    columnNumber: 39
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    type: "button",
-                                    onClick: handleManualSubmit,
-                                    className: "btn-primary flex items-center gap-2 m-1 rounded-xl",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
-                                            className: "w-5 h-5"
-                                        }, void 0, false, {
-                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                            lineNumber: 273,
-                                            columnNumber: 29
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "hidden sm:inline",
-                                            children: "Search"
-                                        }, void 0, false, {
-                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                            lineNumber: 274,
-                                            columnNumber: 29
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                    lineNumber: 268,
-                                    columnNumber: 25
-                                }, ("TURBOPACK compile-time value", void 0))
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                            lineNumber: 247,
-                            columnNumber: 21
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
-                            children: isOpen && suggestions.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                                ref: dropdownRef,
+                        lineNumber: 203,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                        className: "text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-400 bg-clip-text text-transparent",
+                        children: "Ramadan Companion"
+                    }, void 0, false, {
+                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                        lineNumber: 212,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-gray-400 text-lg md:text-xl mb-10",
+                        children: "Your spiritual guide for the blessed month"
+                    }, void 0, false, {
+                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                        lineNumber: 215,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "relative",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
                                 initial: {
                                     opacity: 0,
-                                    y: -10,
-                                    scale: 0.98
+                                    y: 20
                                 },
                                 animate: {
                                     opacity: 1,
-                                    y: 0,
-                                    scale: 1
-                                },
-                                exit: {
-                                    opacity: 0,
-                                    y: -10,
-                                    scale: 0.98
+                                    y: 0
                                 },
                                 transition: {
-                                    duration: 0.2
+                                    delay: 0.3,
+                                    duration: 0.5
                                 },
-                                className: "absolute top-full left-0 right-0 mt-3 rounded-2xl overflow-hidden z-50 max-h-80 overflow-y-auto",
-                                style: {
-                                    background: 'rgba(15, 23, 42, 0.95)',
-                                    backdropFilter: 'blur(24px)',
-                                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                                    boxShadow: '0 24px 48px rgba(0, 0, 0, 0.4)'
-                                },
-                                children: suggestions.map((suggestion, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        onClick: ()=>handleSelectCity(suggestion),
-                                        className: `flex items-center gap-3 px-5 py-3.5 cursor-pointer transition-all duration-150 border-b border-white/5 last:border-b-0 ${index === selectedIndex ? 'bg-emerald-500/20 text-white' : 'hover:bg-white/5 text-gray-300'}`,
+                                className: "glass-card-elevated p-2 flex items-center gap-2",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "pl-4",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
+                                            className: "w-5 h-5 text-emerald-400"
+                                        }, void 0, false, {
+                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                                            lineNumber: 228,
+                                            columnNumber: 29
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    }, void 0, false, {
+                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                                        lineNumber: 227,
+                                        columnNumber: 25
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                        ref: inputRef,
+                                        type: "text",
+                                        value: query,
+                                        onChange: handleInputChange,
+                                        onFocus: ()=>suggestions.length > 0 && setIsOpen(true),
+                                        onKeyDown: handleKeyDown,
+                                        placeholder: "Search for your city...",
+                                        className: "flex-1 bg-transparent border-none outline-none text-lg text-white placeholder-gray-500 py-3",
+                                        autoComplete: "off"
+                                    }, void 0, false, {
+                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                                        lineNumber: 230,
+                                        columnNumber: 25
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    isLoading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
+                                        className: "w-5 h-5 text-emerald-400 animate-spin"
+                                    }, void 0, false, {
+                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                                        lineNumber: 241,
+                                        columnNumber: 39
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
+                                        onClick: handleManualSubmit,
+                                        className: "btn-primary flex items-center gap-2 m-1 rounded-xl",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
-                                                className: `w-4 h-4 flex-shrink-0 ${index === selectedIndex ? 'text-emerald-400' : 'text-gray-500'}`
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
+                                                className: "w-5 h-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                                lineNumber: 304,
-                                                columnNumber: 41
+                                                lineNumber: 247,
+                                                columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0)),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex-1 min-w-0",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "font-medium truncate",
-                                                        children: highlightMatch(suggestion.city, query)
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                                        lineNumber: 307,
-                                                        columnNumber: 45
-                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-sm text-gray-500 truncate",
-                                                        children: suggestion.country
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                                        lineNumber: 310,
-                                                        columnNumber: 45
-                                                    }, ("TURBOPACK compile-time value", void 0))
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                                lineNumber: 306,
-                                                columnNumber: 41
-                                            }, ("TURBOPACK compile-time value", void 0)),
-                                            index === selectedIndex && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-xs text-gray-500 flex-shrink-0",
-                                                children: "Enter ↵"
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "hidden sm:inline",
+                                                children: "Search"
                                             }, void 0, false, {
                                                 fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                                lineNumber: 315,
-                                                columnNumber: 45
+                                                lineNumber: 248,
+                                                columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
-                                    }, `${suggestion.city}-${suggestion.country}-${index}`, true, {
+                                    }, void 0, true, {
                                         fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                        lineNumber: 296,
-                                        columnNumber: 37
-                                    }, ("TURBOPACK compile-time value", void 0)))
-                            }, void 0, false, {
+                                        lineNumber: 242,
+                                        columnNumber: 25
+                                    }, ("TURBOPACK compile-time value", void 0))
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                lineNumber: 281,
-                                columnNumber: 29
-                            }, ("TURBOPACK compile-time value", void 0))
-                        }, void 0, false, {
-                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                            lineNumber: 279,
-                            columnNumber: 21
-                        }, ("TURBOPACK compile-time value", void 0))
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                    lineNumber: 246,
-                    columnNumber: 17
-                }, ("TURBOPACK compile-time value", void 0)),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "text-gray-500 text-sm mt-6",
-                    children: "Type at least 3 characters · Use ↑↓ to navigate · Enter to select"
-                }, void 0, false, {
-                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                    lineNumber: 324,
-                    columnNumber: 17
-                }, ("TURBOPACK compile-time value", void 0)),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                    initial: {
-                        opacity: 0,
-                        y: 20
-                    },
-                    animate: {
-                        opacity: 1,
-                        y: 0
-                    },
-                    transition: {
-                        delay: 0.5,
-                        duration: 0.6
-                    },
-                    className: "mt-10",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-gray-500 text-sm mb-4",
-                            children: "Popular cities"
-                        }, void 0, false, {
-                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                            lineNumber: 335,
-                            columnNumber: 21
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex flex-wrap justify-center gap-3",
-                            children: popularCities.map((cityData, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].button, {
+                                lineNumber: 221,
+                                columnNumber: 21
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                                children: isOpen && suggestions.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                                    ref: dropdownRef,
                                     initial: {
                                         opacity: 0,
-                                        y: 10
+                                        y: -10,
+                                        scale: 0.98
                                     },
                                     animate: {
                                         opacity: 1,
-                                        y: 0
+                                        y: 0,
+                                        scale: 1
                                     },
-                                    transition: {
-                                        delay: 0.6 + index * 0.05
-                                    },
-                                    whileHover: {
-                                        y: -3,
-                                        scale: 1.02
-                                    },
-                                    whileTap: {
+                                    exit: {
+                                        opacity: 0,
+                                        y: -10,
                                         scale: 0.98
                                     },
-                                    onClick: ()=>{
-                                        setQuery(cityData.city);
-                                        onSubmit(cityData.city, cityData.country);
+                                    transition: {
+                                        duration: 0.2
                                     },
-                                    className: "group relative px-5 py-2.5 rounded-xl text-sm font-medium text-gray-300 transition-all duration-300 border border-white/10 hover:border-emerald-500/50 hover:text-white",
+                                    className: "absolute top-full left-0 right-0 mt-3 rounded-2xl overflow-hidden z-50 max-h-80 overflow-y-auto",
                                     style: {
-                                        background: 'rgba(255, 255, 255, 0.03)',
-                                        backdropFilter: 'blur(8px)'
+                                        background: 'rgba(15, 23, 42, 0.95)',
+                                        backdropFilter: 'blur(24px)',
+                                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                                        boxShadow: '0 24px 48px rgba(0, 0, 0, 0.4)'
                                     },
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300",
-                                            style: {
-                                                background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(13, 148, 136, 0.1) 100%)'
-                                            }
-                                        }, void 0, false, {
-                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                            lineNumber: 355,
-                                            columnNumber: 33
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "relative z-10 flex items-center gap-2",
+                                    children: suggestions.map((suggestion, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            onClick: ()=>handleSelectCity(suggestion),
+                                            className: `flex items-center gap-3 px-5 py-3.5 cursor-pointer transition-all duration-150 border-b border-white/5 last:border-b-0 ${index === selectedIndex ? 'bg-emerald-500/20 text-white' : 'hover:bg-white/5 text-gray-300'}`,
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
-                                                    className: "w-3.5 h-3.5 text-gray-500 group-hover:text-emerald-400 transition-colors"
+                                                    className: `w-4 h-4 flex-shrink-0 ${index === selectedIndex ? 'text-emerald-400' : 'text-gray-500'}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                                    lineNumber: 362,
-                                                    columnNumber: 37
+                                                    lineNumber: 278,
+                                                    columnNumber: 41
                                                 }, ("TURBOPACK compile-time value", void 0)),
-                                                cityData.city
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex-1 min-w-0",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "font-medium truncate",
+                                                            children: highlightMatch(suggestion.city, query)
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                                                            lineNumber: 281,
+                                                            columnNumber: 45
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "text-sm text-gray-500 truncate",
+                                                            children: suggestion.country
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                                                            lineNumber: 284,
+                                                            columnNumber: 45
+                                                        }, ("TURBOPACK compile-time value", void 0))
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                                                    lineNumber: 280,
+                                                    columnNumber: 41
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                index === selectedIndex && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "text-xs text-gray-500 flex-shrink-0",
+                                                    children: "Enter ↵"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                                                    lineNumber: 287,
+                                                    columnNumber: 45
+                                                }, ("TURBOPACK compile-time value", void 0))
                                             ]
-                                        }, void 0, true, {
+                                        }, `${suggestion.city}-${suggestion.country}-${index}`, true, {
                                             fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                            lineNumber: 361,
-                                            columnNumber: 33
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    ]
-                                }, cityData.city, true, {
+                                            lineNumber: 270,
+                                            columnNumber: 37
+                                        }, ("TURBOPACK compile-time value", void 0)))
+                                }, void 0, false, {
                                     fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                                    lineNumber: 338,
+                                    lineNumber: 255,
                                     columnNumber: 29
-                                }, ("TURBOPACK compile-time value", void 0)))
-                        }, void 0, false, {
-                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                            lineNumber: 336,
-                            columnNumber: 21
-                        }, ("TURBOPACK compile-time value", void 0))
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                    lineNumber: 329,
-                    columnNumber: 17
-                }, ("TURBOPACK compile-time value", void 0)),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                    initial: {
-                        opacity: 0
-                    },
-                    animate: {
-                        opacity: 0.5
-                    },
-                    transition: {
-                        delay: 1.2,
-                        duration: 0.6
-                    },
-                    className: "mt-10",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-gray-600 text-xs",
-                        children: "↓ Scroll down for prayer times ↓"
+                                }, ("TURBOPACK compile-time value", void 0))
+                            }, void 0, false, {
+                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                                lineNumber: 253,
+                                columnNumber: 21
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                        lineNumber: 220,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-gray-500 text-sm mt-6",
+                        children: "Type at least 3 characters · Use ↑↓ to navigate · Enter to select"
                     }, void 0, false, {
                         fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                        lineNumber: 377,
-                        columnNumber: 21
+                        lineNumber: 296,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                        initial: {
+                            opacity: 0,
+                            y: 20
+                        },
+                        animate: {
+                            opacity: 1,
+                            y: 0
+                        },
+                        transition: {
+                            delay: 0.5,
+                            duration: 0.6
+                        },
+                        className: "mt-10",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-gray-500 text-sm mb-4",
+                                children: "Popular cities"
+                            }, void 0, false, {
+                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                                lineNumber: 307,
+                                columnNumber: 21
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex flex-wrap justify-center gap-3",
+                                children: popularCities.map((cityData, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].button, {
+                                        initial: {
+                                            opacity: 0,
+                                            y: 10
+                                        },
+                                        animate: {
+                                            opacity: 1,
+                                            y: 0
+                                        },
+                                        transition: {
+                                            delay: 0.6 + index * 0.05
+                                        },
+                                        whileHover: {
+                                            y: -3,
+                                            scale: 1.02
+                                        },
+                                        whileTap: {
+                                            scale: 0.98
+                                        },
+                                        onClick: ()=>onSubmit(cityData.city, cityData.country),
+                                        className: "group relative px-5 py-2.5 rounded-xl text-sm font-medium text-gray-300 transition-all duration-300 border border-white/10 hover:border-emerald-500/50 hover:text-white",
+                                        style: {
+                                            background: 'rgba(255, 255, 255, 0.03)',
+                                            backdropFilter: 'blur(8px)'
+                                        },
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300",
+                                                style: {
+                                                    background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(13, 148, 136, 0.1) 100%)'
+                                                }
+                                            }, void 0, false, {
+                                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                                                lineNumber: 324,
+                                                columnNumber: 33
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "relative z-10 flex items-center gap-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
+                                                        className: "w-3.5 h-3.5 text-gray-500 group-hover:text-emerald-400 transition-colors"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                                                        lineNumber: 331,
+                                                        columnNumber: 37
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    cityData.city
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                                                lineNumber: 330,
+                                                columnNumber: 33
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        ]
+                                    }, cityData.city, true, {
+                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                                        lineNumber: 310,
+                                        columnNumber: 29
+                                    }, ("TURBOPACK compile-time value", void 0)))
+                            }, void 0, false, {
+                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                                lineNumber: 308,
+                                columnNumber: 21
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                        lineNumber: 301,
+                        columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
-                }, void 0, false, {
-                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-                    lineNumber: 371,
-                    columnNumber: 17
-                }, ("TURBOPACK compile-time value", void 0))
-            ]
-        }, void 0, true, {
-            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-            lineNumber: 221,
-            columnNumber: 13
-        }, ("TURBOPACK compile-time value", void 0))
-    }, void 0, false, {
+                ]
+            }, void 0, true, {
+                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                lineNumber: 197,
+                columnNumber: 13
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].button, {
+                onClick: scrollToDashboard,
+                initial: {
+                    opacity: 0
+                },
+                animate: {
+                    opacity: 1
+                },
+                transition: {
+                    delay: 1.2
+                },
+                className: "absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:text-emerald-400 transition-colors cursor-pointer",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "text-xs font-medium tracking-wider uppercase",
+                        children: "Scroll for prayer times"
+                    }, void 0, false, {
+                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                        lineNumber: 348,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                        animate: {
+                            y: [
+                                0,
+                                8,
+                                0
+                            ]
+                        },
+                        transition: {
+                            duration: 1.5,
+                            repeat: Infinity,
+                            ease: 'easeInOut'
+                        },
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
+                            className: "w-6 h-6"
+                        }, void 0, false, {
+                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                            lineNumber: 353,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0))
+                    }, void 0, false, {
+                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                        lineNumber: 349,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
+                lineNumber: 341,
+                columnNumber: 13
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
         fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/components/SmartSearch.jsx",
-        lineNumber: 220,
+        lineNumber: 177,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -2685,8 +2739,7 @@ function Home() {
     const [city, setCity] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const [country, setCountry] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const [isClient, setIsClient] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [hasUserChosen, setHasUserChosen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    // Inline search state (for header search bar)
+    // Inline header search state
     const [headerQuery, setHeaderQuery] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const [headerSuggestions, setHeaderSuggestions] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [headerOpen, setHeaderOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -2704,37 +2757,26 @@ function Home() {
         setIsClient(true);
         const savedCity = localStorage.getItem('ramadan-companion-city') || '';
         const savedCountry = localStorage.getItem('ramadan-companion-country') || '';
-        if (savedCity) {
-            setCity(savedCity);
-            setCountry(savedCountry);
-            setHasUserChosen(true);
-        } else {
-            // First visit: load default city
-            setCity(DEFAULT_CITY);
-            setCountry(DEFAULT_COUNTRY);
-            setHasUserChosen(false);
-        }
+        setCity(savedCity || DEFAULT_CITY);
+        setCountry(savedCountry || DEFAULT_COUNTRY);
     }, []);
     const { prayerTimes, loading: prayerLoading, error: prayerError } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$app$2f$hooks$2f$usePrayerTimes$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])(city, country);
     const { name: asmaName, loading: asmaLoading, error: asmaError, refresh: refreshAsma } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$app$2f$hooks$2f$useAsmaAlHusna$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])();
     // Save city to localStorage when user explicitly chooses
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (city && hasUserChosen) {
-            localStorage.setItem('ramadan-companion-city', city);
-            localStorage.setItem('ramadan-companion-country', country);
-        }
-    }, [
-        city,
-        country,
-        hasUserChosen
-    ]);
     const handleCitySubmit = (selectedCity, selectedCountry = '')=>{
         setCity(selectedCity);
         setCountry(selectedCountry);
-        setHasUserChosen(true);
+        localStorage.setItem('ramadan-companion-city', selectedCity);
+        localStorage.setItem('ramadan-companion-country', selectedCountry);
         setHeaderQuery('');
         setHeaderOpen(false);
         setHeaderSuggestions([]);
+        // Smooth scroll to dashboard
+        setTimeout(()=>{
+            document.getElementById('dashboard')?.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }, 200);
     };
     // ========================================
     // HEADER INLINE SEARCH LOGIC
@@ -2798,9 +2840,7 @@ function Home() {
             setHeaderOpen(filtered.length > 0);
             return;
         }
-        headerDebounceRef.current = setTimeout(()=>{
-            fetchHeaderSuggestions(headerQuery);
-        }, 400);
+        headerDebounceRef.current = setTimeout(()=>fetchHeaderSuggestions(headerQuery), 400);
         return ()=>{
             if (headerDebounceRef.current) clearTimeout(headerDebounceRef.current);
         };
@@ -2810,18 +2850,14 @@ function Home() {
     // Click outside to close header dropdown
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const handleClickOutside = (e)=>{
-            if (headerDropdownRef.current && !headerDropdownRef.current.contains(e.target) && headerInputRef.current && !headerInputRef.current.contains(e.target)) {
-                setHeaderOpen(false);
-            }
+            if (headerDropdownRef.current && !headerDropdownRef.current.contains(e.target) && headerInputRef.current && !headerInputRef.current.contains(e.target)) setHeaderOpen(false);
         };
         document.addEventListener('mousedown', handleClickOutside);
         return ()=>document.removeEventListener('mousedown', handleClickOutside);
     }, []);
     const handleHeaderKeyDown = (e)=>{
         if (!headerOpen || headerSuggestions.length === 0) {
-            if (e.key === 'Enter' && headerQuery.trim()) {
-                handleCitySubmit(headerQuery.trim(), '');
-            }
+            if (e.key === 'Enter' && headerQuery.trim()) handleCitySubmit(headerQuery.trim(), '');
             return;
         }
         switch(e.key){
@@ -2838,9 +2874,7 @@ function Home() {
                 if (headerSelectedIndex >= 0) {
                     const s = headerSuggestions[headerSelectedIndex];
                     handleCitySubmit(s.city, s.country);
-                } else if (headerQuery.trim()) {
-                    handleCitySubmit(headerQuery.trim(), '');
-                }
+                } else if (headerQuery.trim()) handleCitySubmit(headerQuery.trim(), '');
                 break;
             case 'Escape':
                 setHeaderOpen(false);
@@ -2857,427 +2891,413 @@ function Home() {
                 children: "Loading..."
             }, void 0, false, {
                 fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                lineNumber: 221,
+                lineNumber: 185,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-            lineNumber: 220,
+            lineNumber: 184,
             columnNumber: 13
         }, this);
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "bg-gradient-mesh min-h-screen",
+        className: "bg-gradient-mesh",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
-                children: !hasUserChosen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                    initial: {
-                        opacity: 1
-                    },
-                    exit: {
-                        opacity: 0,
-                        height: 0,
-                        marginBottom: 0
-                    },
-                    transition: {
-                        duration: 0.5
-                    },
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$app$2f$components$2f$SmartSearch$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        onSubmit: handleCitySubmit,
-                        savedCity: city,
-                        hasCity: hasUserChosen
-                    }, void 0, false, {
-                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                        lineNumber: 238,
-                        columnNumber: 25
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                    lineNumber: 233,
-                    columnNumber: 21
-                }, this)
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$app$2f$components$2f$SmartSearch$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                onSubmit: handleCitySubmit
             }, void 0, false, {
                 fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                lineNumber: 231,
+                lineNumber: 195,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "app-container py-10 relative z-10",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].header, {
-                        initial: {
-                            opacity: 0,
-                            y: -20
-                        },
-                        animate: {
-                            opacity: 1,
-                            y: 0
-                        },
-                        transition: {
-                            duration: 0.5
-                        },
-                        className: "mb-8",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-center gap-4",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "text-4xl",
-                                            children: "🌙"
-                                        }, void 0, false, {
-                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                            lineNumber: 262,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                                    className: "text-2xl font-semibold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent",
-                                                    children: "Ramadan Companion"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                                    lineNumber: 264,
-                                                    columnNumber: 33
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex items-center gap-1.5 text-gray-500 text-sm mt-0.5",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
-                                                            className: "w-3.5 h-3.5"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                                            lineNumber: 268,
-                                                            columnNumber: 37
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            children: [
-                                                                city,
-                                                                country ? `, ${country}` : ''
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                                            lineNumber: 269,
-                                                            columnNumber: 37
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                                    lineNumber: 267,
-                                                    columnNumber: 33
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                            lineNumber: 263,
-                                            columnNumber: 29
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                    lineNumber: 261,
-                                    columnNumber: 25
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "relative w-full sm:w-auto",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/10 hover:border-emerald-500/30 transition-all duration-300",
-                                            style: {
-                                                background: 'rgba(255, 255, 255, 0.03)',
-                                                backdropFilter: 'blur(12px)'
-                                            },
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
-                                                    className: "w-4 h-4 text-emerald-400 flex-shrink-0"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                                    lineNumber: 283,
-                                                    columnNumber: 33
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                    ref: headerInputRef,
-                                                    type: "text",
-                                                    value: headerQuery,
-                                                    onChange: (e)=>{
-                                                        setHeaderQuery(e.target.value);
-                                                        setHeaderSelectedIndex(-1);
-                                                    },
-                                                    onKeyDown: handleHeaderKeyDown,
-                                                    placeholder: "Change city…",
-                                                    className: "bg-transparent border-none outline-none text-sm text-white placeholder-gray-500 w-32 sm:w-40 focus:w-48 transition-all",
-                                                    autoComplete: "off"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                                    lineNumber: 284,
-                                                    columnNumber: 33
-                                                }, this),
-                                                headerLoading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
-                                                    className: "w-4 h-4 text-emerald-400 animate-spin flex-shrink-0"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                                    lineNumber: 298,
-                                                    columnNumber: 37
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                            lineNumber: 276,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
-                                            children: headerOpen && headerSuggestions.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                                                ref: headerDropdownRef,
-                                                initial: {
-                                                    opacity: 0,
-                                                    y: -8,
-                                                    scale: 0.98
-                                                },
-                                                animate: {
-                                                    opacity: 1,
-                                                    y: 0,
-                                                    scale: 1
-                                                },
-                                                exit: {
-                                                    opacity: 0,
-                                                    y: -8,
-                                                    scale: 0.98
-                                                },
-                                                transition: {
-                                                    duration: 0.15
-                                                },
-                                                className: "absolute top-full right-0 mt-2 w-72 rounded-2xl overflow-hidden z-50 max-h-60 overflow-y-auto",
-                                                style: {
-                                                    background: 'rgba(15, 23, 42, 0.95)',
-                                                    backdropFilter: 'blur(24px)',
-                                                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                                                    boxShadow: '0 16px 48px rgba(0, 0, 0, 0.4)'
-                                                },
-                                                children: headerSuggestions.map((suggestion, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        onClick: ()=>handleCitySubmit(suggestion.city, suggestion.country),
-                                                        className: `flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-150 border-b border-white/5 last:border-b-0 ${index === headerSelectedIndex ? 'bg-emerald-500/20 text-white' : 'hover:bg-white/5 text-gray-300'}`,
+                id: "dashboard",
+                className: "dashboard-section min-h-screen",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "app-container py-10 relative z-10",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].header, {
+                            initial: {
+                                opacity: 0,
+                                y: -20
+                            },
+                            whileInView: {
+                                opacity: 1,
+                                y: 0
+                            },
+                            viewport: {
+                                once: true
+                            },
+                            transition: {
+                                duration: 0.5
+                            },
+                            className: "mb-8",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex items-center gap-4",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-4xl",
+                                                children: "🌙"
+                                            }, void 0, false, {
+                                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                                lineNumber: 214,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                                        className: "text-2xl font-semibold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent",
+                                                        children: "Ramadan Companion"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                                        lineNumber: 216,
+                                                        columnNumber: 37
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex items-center gap-1.5 text-gray-500 text-sm mt-0.5",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
-                                                                className: `w-3.5 h-3.5 flex-shrink-0 ${index === headerSelectedIndex ? 'text-emerald-400' : 'text-gray-500'}`
+                                                                className: "w-3.5 h-3.5"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                                                lineNumber: 328,
-                                                                columnNumber: 49
+                                                                lineNumber: 220,
+                                                                columnNumber: 41
                                                             }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "flex-1 min-w-0",
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                        className: "text-sm font-medium truncate",
-                                                                        children: suggestion.city
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                                                        lineNumber: 331,
-                                                                        columnNumber: 53
-                                                                    }, this),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                        className: "text-xs text-gray-500 truncate",
-                                                                        children: suggestion.country
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                                                        lineNumber: 332,
-                                                                        columnNumber: 53
-                                                                    }, this)
+                                                                    city,
+                                                                    country ? `, ${country}` : ''
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                                                lineNumber: 330,
-                                                                columnNumber: 49
+                                                                lineNumber: 221,
+                                                                columnNumber: 41
                                                             }, this)
                                                         ]
-                                                    }, `${suggestion.city}-${suggestion.country}-${index}`, true, {
+                                                    }, void 0, true, {
                                                         fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                                        lineNumber: 320,
-                                                        columnNumber: 45
-                                                    }, this))
+                                                        lineNumber: 219,
+                                                        columnNumber: 37
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                                lineNumber: 215,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                        lineNumber: 213,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "relative w-full sm:w-auto",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/10 hover:border-emerald-500/30 transition-all duration-300",
+                                                style: {
+                                                    background: 'rgba(255, 255, 255, 0.03)',
+                                                    backdropFilter: 'blur(12px)'
+                                                },
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
+                                                        className: "w-4 h-4 text-emerald-400 flex-shrink-0"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                                        lineNumber: 235,
+                                                        columnNumber: 37
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                        ref: headerInputRef,
+                                                        type: "text",
+                                                        value: headerQuery,
+                                                        onChange: (e)=>{
+                                                            setHeaderQuery(e.target.value);
+                                                            setHeaderSelectedIndex(-1);
+                                                        },
+                                                        onKeyDown: handleHeaderKeyDown,
+                                                        placeholder: "Change city…",
+                                                        className: "bg-transparent border-none outline-none text-sm text-white placeholder-gray-500 w-32 sm:w-40 focus:w-48 transition-all",
+                                                        autoComplete: "off"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                                        lineNumber: 236,
+                                                        columnNumber: 37
+                                                    }, this),
+                                                    headerLoading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
+                                                        className: "w-4 h-4 text-emerald-400 animate-spin flex-shrink-0"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                                        lineNumber: 246,
+                                                        columnNumber: 55
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                                lineNumber: 228,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                                                children: headerOpen && headerSuggestions.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                                                    ref: headerDropdownRef,
+                                                    initial: {
+                                                        opacity: 0,
+                                                        y: -8,
+                                                        scale: 0.98
+                                                    },
+                                                    animate: {
+                                                        opacity: 1,
+                                                        y: 0,
+                                                        scale: 1
+                                                    },
+                                                    exit: {
+                                                        opacity: 0,
+                                                        y: -8,
+                                                        scale: 0.98
+                                                    },
+                                                    transition: {
+                                                        duration: 0.15
+                                                    },
+                                                    className: "absolute top-full right-0 mt-2 w-72 rounded-2xl overflow-hidden z-50 max-h-60 overflow-y-auto",
+                                                    style: {
+                                                        background: 'rgba(15, 23, 42, 0.95)',
+                                                        backdropFilter: 'blur(24px)',
+                                                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                                                        boxShadow: '0 16px 48px rgba(0, 0, 0, 0.4)'
+                                                    },
+                                                    children: headerSuggestions.map((suggestion, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            onClick: ()=>handleCitySubmit(suggestion.city, suggestion.country),
+                                                            className: `flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-150 border-b border-white/5 last:border-b-0 ${index === headerSelectedIndex ? 'bg-emerald-500/20 text-white' : 'hover:bg-white/5 text-gray-300'}`,
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
+                                                                    className: `w-3.5 h-3.5 flex-shrink-0 ${index === headerSelectedIndex ? 'text-emerald-400' : 'text-gray-500'}`
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                                                    lineNumber: 275,
+                                                                    columnNumber: 53
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "flex-1 min-w-0",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                            className: "text-sm font-medium truncate",
+                                                                            children: suggestion.city
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                                                            lineNumber: 278,
+                                                                            columnNumber: 57
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                            className: "text-xs text-gray-500 truncate",
+                                                                            children: suggestion.country
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                                                            lineNumber: 279,
+                                                                            columnNumber: 57
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                                                    lineNumber: 277,
+                                                                    columnNumber: 53
+                                                                }, this)
+                                                            ]
+                                                        }, `${suggestion.city}-${suggestion.country}-${index}`, true, {
+                                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                                            lineNumber: 267,
+                                                            columnNumber: 49
+                                                        }, this))
+                                                }, void 0, false, {
+                                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                                    lineNumber: 252,
+                                                    columnNumber: 41
+                                                }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                                lineNumber: 305,
-                                                columnNumber: 37
+                                                lineNumber: 250,
+                                                columnNumber: 33
                                             }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                        lineNumber: 227,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                lineNumber: 211,
+                                columnNumber: 25
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                            lineNumber: 204,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
+                            children: [
+                                prayerError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                                    initial: {
+                                        opacity: 0,
+                                        y: -10
+                                    },
+                                    animate: {
+                                        opacity: 1,
+                                        y: 0
+                                    },
+                                    className: "glass-card p-5 flex items-center gap-4 border-red-500/15 bg-red-500/5 mb-8",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
+                                            className: "w-5 h-5 text-red-400 flex-shrink-0"
                                         }, void 0, false, {
                                             fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                            lineNumber: 303,
+                                            lineNumber: 299,
+                                            columnNumber: 33
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-red-300 font-light",
+                                            children: prayerError
+                                        }, void 0, false, {
+                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                            lineNumber: 300,
+                                            columnNumber: 33
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                    lineNumber: 294,
+                                    columnNumber: 29
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "mb-6",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$app$2f$components$2f$FastingProgressBar$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                        prayerTimes: prayerTimes
+                                    }, void 0, false, {
+                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                        lineNumber: 306,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                    lineNumber: 305,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "text-center relative z-10",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$app$2f$components$2f$CountdownTimer$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                        prayerTimes: prayerTimes,
+                                        loading: prayerLoading
+                                    }, void 0, false, {
+                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                        lineNumber: 311,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                    lineNumber: 310,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "mt-8 mb-12 relative z-10",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$app$2f$components$2f$PrayerTimesGrid$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                        prayerTimes: prayerTimes,
+                                        loading: prayerLoading
+                                    }, void 0, false, {
+                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                        lineNumber: 316,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                    lineNumber: 315,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-10",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$app$2f$components$2f$AsmaAlHusna$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                            name: asmaName,
+                                            loading: asmaLoading,
+                                            error: asmaError,
+                                            onRefresh: refreshAsma
+                                        }, void 0, false, {
+                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                            lineNumber: 321,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$app$2f$components$2f$AdkarSection$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                            lineNumber: 327,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                    lineNumber: 275,
+                                    lineNumber: 320,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "mt-12 relative z-10",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$app$2f$components$2f$DailyAyah$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                        lineNumber: 332,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                    lineNumber: 331,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                            lineNumber: 259,
+                            lineNumber: 291,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
+                            className: "mt-20 text-center",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-gray-500 font-light",
+                                    children: "May Allah accept your fasting and prayers 🤲"
+                                }, void 0, false, {
+                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                    lineNumber: 338,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "mt-2 text-gray-600/60 text-sm",
+                                    children: "Ramadan Companion • Made with ❤️ for the Ummah"
+                                }, void 0, false, {
+                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                                    lineNumber: 339,
+                                    columnNumber: 25
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                            lineNumber: 337,
                             columnNumber: 21
                         }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                        lineNumber: 253,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-                        children: [
-                            prayerError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                                initial: {
-                                    opacity: 0,
-                                    y: -10
-                                },
-                                animate: {
-                                    opacity: 1,
-                                    y: 0
-                                },
-                                className: "glass-card p-5 flex items-center gap-4 border-red-500/15 bg-red-500/5 mb-8",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
-                                        className: "w-5 h-5 text-red-400 flex-shrink-0"
-                                    }, void 0, false, {
-                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                        lineNumber: 352,
-                                        columnNumber: 29
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-red-300 font-light",
-                                        children: prayerError
-                                    }, void 0, false, {
-                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                        lineNumber: 353,
-                                        columnNumber: 29
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                lineNumber: 347,
-                                columnNumber: 25
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mb-6",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$app$2f$components$2f$FastingProgressBar$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                    prayerTimes: prayerTimes
-                                }, void 0, false, {
-                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                    lineNumber: 359,
-                                    columnNumber: 25
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                lineNumber: 358,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-center relative z-10",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$app$2f$components$2f$CountdownTimer$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                    prayerTimes: prayerTimes,
-                                    loading: prayerLoading
-                                }, void 0, false, {
-                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                    lineNumber: 364,
-                                    columnNumber: 25
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                lineNumber: 363,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mt-8 mb-12 relative z-10",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$app$2f$components$2f$PrayerTimesGrid$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                    prayerTimes: prayerTimes,
-                                    loading: prayerLoading
-                                }, void 0, false, {
-                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                    lineNumber: 369,
-                                    columnNumber: 25
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                lineNumber: 368,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-10",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$app$2f$components$2f$AsmaAlHusna$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                        name: asmaName,
-                                        loading: asmaLoading,
-                                        error: asmaError,
-                                        onRefresh: refreshAsma
-                                    }, void 0, false, {
-                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                        lineNumber: 374,
-                                        columnNumber: 25
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$app$2f$components$2f$AdkarSection$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
-                                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                        lineNumber: 380,
-                                        columnNumber: 25
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                lineNumber: 373,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mt-12 relative z-10",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$app$2f$components$2f$DailyAyah$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
-                                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                    lineNumber: 385,
-                                    columnNumber: 25
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                lineNumber: 384,
-                                columnNumber: 21
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                        lineNumber: 344,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
-                        className: "mt-20 text-center",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-gray-500 font-light",
-                                children: "May Allah accept your fasting and prayers 🤲"
-                            }, void 0, false, {
-                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                lineNumber: 391,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$OneDrive__$2d$__Akumenia$2f$Bureau$2f$ramlive$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "mt-2 text-gray-600/60 text-sm",
-                                children: "Ramadan Companion • Made with ❤️ for the Ummah"
-                            }, void 0, false, {
-                                fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                                lineNumber: 392,
-                                columnNumber: 21
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                        lineNumber: 390,
-                        columnNumber: 17
-                    }, this)
-                ]
-            }, void 0, true, {
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
+                    lineNumber: 201,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
                 fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-                lineNumber: 250,
+                lineNumber: 200,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/OneDrive - Akumenia/Bureau/ramlive/app/page.js",
-        lineNumber: 227,
+        lineNumber: 191,
         columnNumber: 9
     }, this);
 }

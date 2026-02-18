@@ -2,23 +2,18 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, MapPin, Sparkles, Globe, Loader2 } from 'lucide-react';
+import { Search, MapPin, Sparkles, Globe, Loader2, ChevronDown } from 'lucide-react';
 
-// ========================================
-// COMPACT HERO SEARCH (Collapsible)
-// ========================================
-const SmartSearch = ({ onSubmit, savedCity, hasCity }) => {
-    const [query, setQuery] = useState(savedCity || '');
+const SmartSearch = ({ onSubmit }) => {
+    const [query, setQuery] = useState('');
     const [suggestions, setSuggestions] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(-1);
     const [isLoading, setIsLoading] = useState(false);
 
-    // Cache: { prefix: [results] } - stores full list for each 3-char prefix
     const prefixCache = useRef({});
     const currentPrefix = useRef('');
     const fullResults = useRef([]);
-
     const inputRef = useRef(null);
     const dropdownRef = useRef(null);
     const abortRef = useRef(null);
@@ -26,9 +21,6 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity }) => {
 
     const getPrefix = (q) => q?.toLowerCase().trim().substring(0, 3) || '';
 
-    // ========================================
-    // LOCAL FILTERING
-    // ========================================
     const filterLocally = useCallback((searchQuery) => {
         if (!fullResults.current.length) return [];
         const lowerQuery = searchQuery.toLowerCase().trim();
@@ -39,12 +31,8 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity }) => {
         );
     }, []);
 
-    // ========================================
-    // FETCH FROM BACKEND (only for new prefix)
-    // ========================================
     const fetchSuggestions = useCallback(async (searchQuery) => {
         const prefix = getPrefix(searchQuery);
-
         if (prefixCache.current[prefix]) {
             fullResults.current = prefixCache.current[prefix];
             currentPrefix.current = prefix;
@@ -53,55 +41,42 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity }) => {
             setIsOpen(filtered.length > 0);
             return;
         }
-
         if (abortRef.current) abortRef.current.abort();
         abortRef.current = new AbortController();
         setIsLoading(true);
-
         try {
             const res = await fetch(`/api/suggestions?q=${encodeURIComponent(searchQuery)}`, {
                 signal: abortRef.current.signal,
             });
             const data = await res.json();
             const results = data.results || [];
-
             prefixCache.current[prefix] = results;
             fullResults.current = results;
             currentPrefix.current = prefix;
-
             const filtered = filterLocally(searchQuery);
             setSuggestions(filtered);
             setIsOpen(filtered.length > 0);
         } catch (err) {
-            if (err.name !== 'AbortError') {
-                setSuggestions([]);
-            }
+            if (err.name !== 'AbortError') setSuggestions([]);
         } finally {
             setIsLoading(false);
         }
     }, [filterLocally]);
 
-    // ========================================
-    // SMART INPUT HANDLER
-    // ========================================
     useEffect(() => {
         if (debounceRef.current) clearTimeout(debounceRef.current);
-
         if (query.length < 3) {
             setSuggestions([]);
             setIsOpen(false);
             return;
         }
-
         const prefix = getPrefix(query);
-
         if (prefix === currentPrefix.current && fullResults.current.length > 0) {
             const filtered = filterLocally(query);
             setSuggestions(filtered);
             setIsOpen(filtered.length > 0);
             return;
         }
-
         if (prefixCache.current[prefix]) {
             fullResults.current = prefixCache.current[prefix];
             currentPrefix.current = prefix;
@@ -110,35 +85,21 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity }) => {
             setIsOpen(filtered.length > 0);
             return;
         }
-
-        debounceRef.current = setTimeout(() => {
-            fetchSuggestions(query);
-        }, 400);
-
-        return () => {
-            if (debounceRef.current) clearTimeout(debounceRef.current);
-        };
+        debounceRef.current = setTimeout(() => fetchSuggestions(query), 400);
+        return () => { if (debounceRef.current) clearTimeout(debounceRef.current); };
     }, [query, fetchSuggestions, filterLocally]);
 
-    // ========================================
-    // CLICK OUTSIDE TO CLOSE
-    // ========================================
     useEffect(() => {
         const handleClickOutside = (e) => {
             if (
                 dropdownRef.current && !dropdownRef.current.contains(e.target) &&
                 inputRef.current && !inputRef.current.contains(e.target)
-            ) {
-                setIsOpen(false);
-            }
+            ) setIsOpen(false);
         };
         document.addEventListener('mousedown', handleClickOutside);
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    // ========================================
-    // KEYBOARD NAVIGATION
-    // ========================================
     const handleKeyDown = (e) => {
         if (!isOpen || suggestions.length === 0) {
             if (e.key === 'Enter' && query.trim()) handleManualSubmit();
@@ -166,7 +127,7 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity }) => {
     };
 
     const handleSelectCity = (suggestion) => {
-        setQuery(suggestion.city);
+        setQuery(''); // Clear search bar - don't show selected city
         setIsOpen(false);
         setSelectedIndex(-1);
         setSuggestions([]);
@@ -175,8 +136,10 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity }) => {
 
     const handleManualSubmit = () => {
         if (query.trim()) {
+            const trimmed = query.trim();
+            setQuery(''); // Clear search bar
             setIsOpen(false);
-            onSubmit(query.trim(), '');
+            onSubmit(trimmed, '');
         }
     };
 
@@ -197,6 +160,10 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity }) => {
         );
     };
 
+    const scrollToDashboard = () => {
+        document.getElementById('dashboard')?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     const popularCities = [
         { city: 'Mecca', country: 'Saudi Arabia' },
         { city: 'Casablanca', country: 'Morocco' },
@@ -206,25 +173,33 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity }) => {
         { city: 'London', country: 'United Kingdom' },
     ];
 
-    // ========================================
-    // COLLAPSED VIEW (city already selected)
-    // ========================================
-    if (hasCity) {
-        return null; // Header handles display when city is selected
-    }
-
-    // ========================================
-    // EXPANDED HERO (no city yet / first visit)
-    // ========================================
     return (
-        <div className="pt-16 pb-10 px-4 relative z-10">
+        <section className="hero-section min-h-screen flex flex-col items-center justify-center px-4 relative z-10">
+            {/* Decorative Elements */}
+            <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 0.15, scale: 1 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="absolute top-24 left-16"
+            >
+                <Sparkles className="w-10 h-10 text-emerald-400" />
+            </motion.div>
+            <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 0.1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.7 }}
+                className="absolute bottom-32 right-20"
+            >
+                <Globe className="w-16 h-16 text-amber-400" />
+            </motion.div>
+
+            {/* Main Content */}
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-center max-w-xl mx-auto"
+                className="text-center max-w-xl w-full"
             >
-                {/* Logo */}
                 <motion.div
                     initial={{ scale: 0.5, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
@@ -237,7 +212,6 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity }) => {
                 <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-400 bg-clip-text text-transparent">
                     Ramadan Companion
                 </h1>
-
                 <p className="text-gray-400 text-lg md:text-xl mb-10">
                     Your spiritual guide for the blessed month
                 </p>
@@ -307,9 +281,7 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity }) => {
                                             <p className="font-medium truncate">
                                                 {highlightMatch(suggestion.city, query)}
                                             </p>
-                                            <p className="text-sm text-gray-500 truncate">
-                                                {suggestion.country}
-                                            </p>
+                                            <p className="text-sm text-gray-500 truncate">{suggestion.country}</p>
                                         </div>
                                         {index === selectedIndex && (
                                             <span className="text-xs text-gray-500 flex-shrink-0">Enter ↵</span>
@@ -325,7 +297,7 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity }) => {
                     Type at least 3 characters · Use ↑↓ to navigate · Enter to select
                 </p>
 
-                {/* Popular Cities - Premium Chips */}
+                {/* Popular Cities */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -342,10 +314,7 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity }) => {
                                 transition={{ delay: 0.6 + index * 0.05 }}
                                 whileHover={{ y: -3, scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                onClick={() => {
-                                    setQuery(cityData.city);
-                                    onSubmit(cityData.city, cityData.country);
-                                }}
+                                onClick={() => onSubmit(cityData.city, cityData.country)}
                                 className="group relative px-5 py-2.5 rounded-xl text-sm font-medium text-gray-300 transition-all duration-300 border border-white/10 hover:border-emerald-500/50 hover:text-white"
                                 style={{
                                     background: 'rgba(255, 255, 255, 0.03)',
@@ -366,18 +335,25 @@ const SmartSearch = ({ onSubmit, savedCity, hasCity }) => {
                         ))}
                     </div>
                 </motion.div>
-
-                {/* Scroll hint */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.5 }}
-                    transition={{ delay: 1.2, duration: 0.6 }}
-                    className="mt-10"
-                >
-                    <p className="text-gray-600 text-xs">↓ Scroll down for prayer times ↓</p>
-                </motion.div>
             </motion.div>
-        </div>
+
+            {/* Animated Scroll Arrow */}
+            <motion.button
+                onClick={scrollToDashboard}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.2 }}
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:text-emerald-400 transition-colors cursor-pointer"
+            >
+                <span className="text-xs font-medium tracking-wider uppercase">Scroll for prayer times</span>
+                <motion.div
+                    animate={{ y: [0, 8, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                    <ChevronDown className="w-6 h-6" />
+                </motion.div>
+            </motion.button>
+        </section>
     );
 };
 
