@@ -226,7 +226,8 @@ export default function Home() {
                             {/* Right: Compact Inline Search */}
                             <div className="relative w-full sm:w-auto">
                                 <div
-                                    className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/10 hover:border-emerald-500/30 transition-all duration-300"
+                                    onClick={() => headerInputRef.current?.focus()}
+                                    className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/10 hover:border-emerald-500/30 transition-all duration-300 cursor-text"
                                     style={{
                                         background: 'rgba(255, 255, 255, 0.03)',
                                         backdropFilter: 'blur(12px)',
@@ -240,7 +241,7 @@ export default function Home() {
                                         onChange={(e) => { setHeaderQuery(e.target.value); setHeaderSelectedIndex(-1); }}
                                         onKeyDown={handleHeaderKeyDown}
                                         placeholder="Change city…"
-                                        className="bg-transparent border-none outline-none text-sm text-white placeholder-gray-500 w-32 sm:w-40 focus:w-48 transition-all"
+                                        className="bg-transparent border-none outline-none text-sm text-white placeholder-gray-500 w-full sm:w-48 transition-all"
                                         autoComplete="off"
                                     />
                                     {headerLoading && <Loader2 className="w-4 h-4 text-emerald-400 animate-spin flex-shrink-0" />}
